@@ -1,0 +1,26 @@
+<? if ($this->pageCount): ?>
+    <div id="pages">
+    <ul>
+    <!-- Página anterior -->
+    <? if (isset($this->previous)): ?>
+        <li class="ant"><a href="<?= $this->url(array('pagina' => $this->previous)); ?>" title="Anterior">Anterior</a></li>
+    <? else: ?>
+        <li class="nolink"><span class="disabled">Anterior</span></li>
+    <? endif; ?>
+    <!-- numeração -->
+    <? foreach ($this->pagesInRange as $page): ?>
+        <? if ($page != $this->current): ?>
+        <li><a href="<?= $this->url(array('pagina' => $page)); ?>"><?= $page; ?></a></li>
+          <? else: ?>
+        <li class="current selecionado"><?=$page;?></li>
+          <? endif; ?>
+    <? endforeach; ?>
+    <!-- Próxima -->
+    <? if (isset($this->next)): ?>
+          <li class="prox"><a href="<?= $this->url(array('pagina' => $this->next)); ?>" title="Pr&oacute;xima">Pr&oacute;xima</a></li>
+    <? else: ?>
+        <li class="nolink"><span class="disabled">Pr&oacute;xima</span></li>
+    <? endif; ?>
+    </ul>
+    </div>
+<? endif; ?>

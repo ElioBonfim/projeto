@@ -1,0 +1,4 @@
+<h4>CURSOS:</h4>
+<? foreach($this->cursos as $arr):?>
+	<div class="cursos"><a href="/cursos/curso/id/<?=$arr['cursoId'];?>"><span><?=$this->ConverteData('-',$arr['data'],2);?></span> - <?=$arr['curso'];?></a></div>
+<? endforeach; ?>

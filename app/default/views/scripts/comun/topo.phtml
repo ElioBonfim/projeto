@@ -1,0 +1,19 @@
+<div class="logo"><img src="<?=$this->BaseUrl("img/logomarca.png");?>" usemap="#Map" border="0" />
+  <map name="Map" id="Map">
+    <area shape="poly" coords="124,7,206,25,282,8,302,43,307,68,305,102,284,125,266,136,242,144,216,146,193,146,169,143,152,138,129,128,113,112,102,84,106,50" href="/index" />
+  </map>
+</div>
+<div class="quadroTopo">
+	<div class="zaelinho"><img src="<?=$this->BaseUrl("img/zaelinho.png");?>" /></div>
+    <div class="pesquisar">
+    	<input type="text" class="busca" placeholder="PESQUISAR" />
+        <input type="button" class="ok" value="" />
+    </div>
+    <div class="banners">
+    	<?
+        foreach($this->banners as $key => $banner){
+		?>
+        <div style="background:url(<?=$this->BaseUrl("img/banners/".$banner['imagem']);?>) no-repeat center top;"></div>
+        <? } ?>
+    </div>
+</div>

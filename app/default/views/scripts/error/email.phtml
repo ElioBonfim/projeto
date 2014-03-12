@@ -1,0 +1,26 @@
+<table width="548" border="0" cellpadding="0" cellspacing="0" class="tabelaErro">
+  <tr>
+    <td height="30" style="border-bottom: solid 1px #999999; color: #09F">Erro:</td>
+    <td style="border-bottom: solid 1px #999999"><? if(isset($this->motivo[0])) echo $this->motivo[0];?></td>
+  </tr>
+  <tr>
+    <td height="30" width="86" style="border-bottom: solid 1px #999999; color: #09F">Cliente:</td>
+    <td width="434" style="border-bottom: solid 1px #999999"><? if(isset($this->motivo[2])) echo $this->motivo[2];?></td>
+  </tr>
+  <tr>
+    <td height="30" style="border-bottom: solid 1px #999999; color: #09F">P&aacute;gina:</td>
+    <td style="border-bottom: solid 1px #999999"><? if(isset($this->motivo[4])) echo $this->motivo[4];?></td>
+  </tr>
+  <tr>
+    <td height="55" style="border-bottom: solid 1px #999999; color: #09F">Navegador:</td>
+    <td style="border-bottom: solid 1px #999999"><? if(isset($this->motivo[3])) echo $this->motivo[3];?></td>
+  </tr>
+  <tr>
+    <td height="30" style="border-bottom: solid 1px #999999; color: #09F">Metodo:</td>
+    <td style="border-bottom: solid 1px #999999"><? if(isset($this->motivo[5])) echo $this->motivo[5]; if(isset($this->motivo[6])) echo $this->motivo[6];?></td>
+  </tr>
+  <tr>
+    <td height="378" valign="top" style="border-bottom: solid 1px #999999; color: #09F">Erro Gerado:</td>
+    <td valign="top" style="border-bottom: solid 1px #999999; color: #F00"><? if(isset($this->motivo[1])) echo $this->motivo[1];?></td>
+  </tr>
+</table>

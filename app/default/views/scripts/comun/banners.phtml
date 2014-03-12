@@ -1,0 +1,39 @@
+<? if($this->originalController == 'index' or $this->originalController == 'cursos' or $this->originalController == 'protocolos') { ?>
+    <div class="bannerTop"><?
+		$banners 	= new Banners();
+		$bannerCursos		= $banners->BannersTipo('Cursos'); 
+		foreach($bannerCursos as $arr):
+			if(!empty($arr['link'])) { ?><a href="<?=$arr['link'];?>"><? } ?>
+			<div style="background-image:url(<?=$this->BaseUrl('img/banners/'.$arr['imagem']);?>)"></div>
+			<? if(!empty($arr['link'])) { ?></a><? } ?>
+		<? endforeach; ?>
+    </div>
+<? } ?>
+    
+<? if($this->originalController == 'index' or $this->originalController == 'produtos' or $this->originalController == 'protocolos') { ?>
+    <div class="bannerTop"><?
+        $banners 	= new Banners();
+        $bannerProdutos		= $banners->BannersTipo('Produtos');
+        foreach($bannerProdutos as $arr):
+			if(!empty($arr['link'])) { ?><a href="<?=$arr['link'];?>"><? } ?>
+			<div style="background-image:url(<?=$this->BaseUrl('img/banners/'.$arr['imagem']);?>)"></div>
+			<? if(!empty($arr['link'])) { ?></a><? } ?>
+		<? endforeach; ?>
+    </div>
+<? } ?>
+
+<? if($this->originalController == 'produtos') { ?>
+    <div class="faixaCinzaLogos">
+    <div>
+    <ul id="mycarousel">
+    <? $marcas = new Parceiros();
+    foreach($marcas->listarRand() as $arr): ?>
+      	<li title="<?=$arr['nome'];?>" style="background-image:url(<?=$this->Img('img/parceiros/'.$arr['logomarca'],190,80);?>);">
+        <a href="/produtos/index/marca/<?=$arr['id'];?>"></a></li>
+    <? endforeach; ?>
+    </ul>
+    </div>
+    </div>
+<? } ?>
+
+<div style="clear:both"></div>

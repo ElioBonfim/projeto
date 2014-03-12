@@ -1,0 +1,55 @@
+<?
+$this->headLink()->appendStylesheet($this->BaseUrl('css/news.css'));
+//$this->headScript()-> appendFile($this->BaseUrl('js/lib/marcadagua.js'));
+//$this->headScript()-> appendFile($this->BaseUrl('js/index.js'));
+?>
+
+<h2>Related Products</h2>
+<h4>Founded results <?=count($this->produtos);?></h4>
+
+<br /><br />
+
+<? if($this->produtos){ 	
+	foreach($this->produtos as $arr):?>
+	<div class="listagem">
+    	<h4><a href="<?=$this->BaseUrl('/products/details/id/'.$arr['id']);?>"><?=$arr['titulo'];?></a></h4>
+    	<h5><?=$arr['slogan'];?></h5>
+    </div>
+	<? endforeach;
+} ?>
+
+<div style="clear:both;"></div>
+<br /><br />
+
+<h2>Related News</h2>
+<h4>Founded results <?=count($this->noticias);?></h4>
+
+<br /><br />
+
+<? if($this->noticias){ 	
+	foreach($this->noticias as $arr):?>
+	<div class="listagem">
+    	<h4><a href="<?=$this->BaseUrl('/news/index/id/'.$arr['id']);?>"><?=$arr['titulo'];?></a></h4>
+    	<h5>Posted in: <?=$this->ConverteData('-', $arr['data'],'USA');?></h5>
+    </div>
+	<? endforeach;
+} ?>
+
+<div style="clear:both;"></div>
+<br /><br />
+
+<h2>Related Events</h2>
+<h4>Founded results <?=count($this->eventos);?></h4>
+
+<br /><br />
+
+<? if($this->eventos){ 
+	foreach($this->eventos as $arr):?>
+	<div class="listagem">
+    	<h4><a href="<?=$this->BaseUrl('/events/index/id/'.$arr['id']);?>"><?=$arr['titulo'];?></a></h4>
+    	<h5>Date: <?=$this->ConverteData('-', $arr['data'],'USA');?></h5>
+    </div>
+	<? endforeach; 
+ } ?>
+
+<div style="clear:both;"></div>
