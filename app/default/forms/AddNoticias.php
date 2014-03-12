@@ -33,8 +33,8 @@
 			
 			foreach($this->db->fetchAll()->toArray() as $forConfig):
 			
-				$elemento =  $this->createElement($forConfig['type'], $forConfig['name'], array($forConfig['idName'], 'label' => $forConfig['label']));
-				$elemento -> removeDecorator('HtmlTag')->removeDecorator('Label');
+				print_r($forConfig);
+				$elemento =  $this->createElement($forConfig['type'], $forConfig['name'], array('id' => $forConfig['idName'], 'label'=> $forConfig['label'] ));
 				$elemento 	  -> setRequired(true);
 				
      			if($forConfig['filterAlnum'])  				$elemento -> addFilter	('Alnum', array('allowwhitespace' => true));
